@@ -14,10 +14,10 @@ const todoSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    subTodos: {
+    subTodos: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'subTodos'
-    }
+    }], // Array of sub-todos
 }, { timestamps: true });
 
 export const Todo = mongoose.model('Todo', todoSchema);
